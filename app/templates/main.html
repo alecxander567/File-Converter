@@ -1,0 +1,444 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>File Converter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-dark">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light"  style="background: #CF0107;">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-white" href="#"> <i class="fas fa-file-upload me-2"></i> FileConverter</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link text-white fs-4" href="https://github.com/alecxander567/File-Converter" target="_blank">
+                  <i class="bi bi-github"></i> Github
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white fs-4" href="https://www.facebook.com/share/1FXfTbBNtk/" target="_blank">
+                  <i class="bi bi-facebook"></i> Facebook
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white fs-4" href="https://www.reddit.com/u/Historical_Rub8018/s/sZvZiPaUFS/" target="_blank">
+                  <i class="bi bi-reddit"></i> Reddit
+                </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-dark text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold"><span style="color: #CF0107;">Fast & Easy</span> File Converter</h1>
+      <p class="lead">Convert your files into any format in seconds. Simple. Quick. Reliable.</p>
+      <div class="mt-4">
+        <div class="text-center d-flex flex-wrap justify-content-center gap-3">
+          <button class="btn btn-lg text-white" style="background: #CF0107; font-weight: 900; width: 250px;" data-bs-toggle="modal" data-bs-target="#uploadModal">
+              Convert <span style="color: #45b6fe;">DOCX</span> to <span style="color: maroon;">PDF</span>
+          </button>
+          <button class="btn btn-lg text-white" style="background: #CF0107; font-weight: 900; width: 250px;" data-bs-toggle="modal" data-bs-target="#uploadTxtModal">
+              Convert <span style="color: #45b6fe;">DOCX</span> to <span class="text-success">TXT</span>
+          </button>
+          <button class="btn btn-lg text-white" style="background: #CF0107; font-weight: 900; width: 250px;" data-bs-toggle="modal" data-bs-target="#uploadPdfModal">
+              Convert <span style="color: maroon;">PDF</span> to <span style="color: #45b6fe;">DOCX</span>
+          </button>
+          <button class="btn btn-lg text-white" style="background: #CF0107; font-weight: 900; width: 250px;" data-bs-toggle="modal" data-bs-target="#uploadPdfToTxtModal">
+            Convert <span style="color: maroon;">PDF</span> to <span class="text-success">TXT</span>
+          </button>
+          <button class="btn btn-lg text-white" style="background: #CF0107; font-weight: 900; width: 250px; font-size: 15px;" data-bs-toggle="modal" data-bs-target="#uploadPdfToImagesModal">
+            Convert <span style="color: maroon;">PDF</span> to <span class="text-warning">JPG/PNG</span>
+          </button>          
+          <button class="btn btn-lg text-white" style="background: #CF0107; font-weight: 900; width: 250px;" data-bs-toggle="modal" data-bs-target="#uploadTxtToPdfModal">
+              Convert <span class="text-success">TXT</span> to <span style="color: maroon;">PDF</span>
+          </button>
+          <button class="btn btn-lg text-white" style="background: #CF0107; font-weight: 900; width: 250px;" data-bs-toggle="modal" data-bs-target="#uploadTxtToDocxModal">
+            Convert <span class="text-success">TXT</span> to <span style="color: #45b6fe;">DOCX</span>
+          </button>
+          <button class="btn btn-lg text-white" style="background: #CF0107; font-weight: 900; width: 250px; font-size: 15px;" data-bs-toggle="modal" data-bs-target="#uploadJpgToPdfModal">
+            Convert <span class="text-warning">JPG/PNG</span> to <span style="color: maroon;">PDF</span>
+          </button>
+          <button class="btn btn-lg text-white" style="background: #CF0107; font-weight: 900; width: 250px;" data-bs-toggle="modal" data-bs-target="#uploadPptxToPdfModal">
+            Convert <span class="text-dark">PPTX</span> to <span style="color: maroon;">PDF</span>
+          </button>  
+          <button class="btn btn-lg text-white" style="background: #CF0107; font-weight: 900; width: 250px;" data-bs-toggle="modal" data-bs-target="#uploadXlsxToPdfModal">
+            Convert <span style="color: lightgreen;">XLSX</span> to <span style="color: maroon;">PDF</span>
+          </button>                
+      </div>           
+      </div>
+    </div>
+  </section>
+
+ <!-- Features Section -->
+<section class="py-5 text-white">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm text-white" style="background: black;">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #CF0107;">Multiple Formats</h5>
+              <p class="card-text">Convert PDFs, images, audio, video, and more easily.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm text-white" style="background: black;">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #CF0107;">Secure & Private</h5>
+              <p class="card-text">Your files are encrypted and deleted after conversion.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm text-white" style="background: black;">
+            <div class="card-body">
+              <h5 class="card-title" style="color: #CF0107;">Lightning Fast</h5>
+              <p class="card-text">Experience super fast conversions with our optimized servers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-secondary text-center py-3 mt-auto">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 File Converter. All rights reserved.</p>
+    </div>
+  </footer>
+
+<!-- Upload Modal -->
+<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header" style="background: #CF0107;">
+                <h5 class="modal-title" id="uploadModalLabel">
+                    <i class="fas fa-cloud-upload-alt me-2"></i> Upload and Convert File
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="uploadForm">
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Select a DOCX file from your device:</label>
+                        <input class="form-control" type="file" id="formFile" name="file" accept=".docx" required>
+                    </div>
+                    <button type="submit" class="btn btn-sm w-100 text-white" id="convertBtn" style="background: #CF0107;">
+                        <i class="fas fa-sync-alt me-2"></i> Convert to PDF
+                    </button>
+                </form>
+
+                <!-- Upload Status -->
+                <div id="uploadStatus" class="text-center mt-3"></div>
+
+                <!-- Download Link -->
+                <div id="downloadLink" class="text-center mt-3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for PDF to DOCX -->
+<div class="modal fade" id="uploadPdfModal" tabindex="-1" aria-labelledby="uploadPdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header" style="background: #CF0107;"> <!-- You can choose another color -->
+        <h5 class="modal-title" id="uploadPdfModalLabel">
+          <i class="fas fa-cloud-upload-alt me-2"></i> Upload and Convert PDF to DOCX
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="uploadPdfForm">
+          <div class="mb-3">
+            <label for="pdfFormFile" class="form-label">Select a PDF file from your device:</label>
+            <input class="form-control" type="file" id="pdfFormFile" name="file" accept=".pdf" required>
+          </div>
+          <button type="submit" class="btn btn-sm w-100 text-white" id="convertPdfBtn" style="background: #CF0107;">
+            <i class="fas fa-sync-alt me-2"></i> Convert to DOCX
+          </button>
+        </form>
+
+        <!-- Upload Status -->
+        <div id="uploadPdfStatus" class="text-center mt-3"></div>
+
+        <!-- Download Link -->
+        <div id="downloadPdfLink" class="text-center mt-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Upload Modal -->
+<div class="modal fade" id="uploadTxtModal" tabindex="-1" aria-labelledby="uploadTxtModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+          <div class="modal-header" style="background: #CF0107;">
+              <h5 class="modal-title" id="uploadTxtModalLabel">
+                  <i class="fas fa-cloud-upload-alt me-2"></i> Upload and Convert File
+              </h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form id="uploadTxtForm" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="mb-3">
+                      <label for="formTxtFile" class="form-label">Select a DOCX file from your device:</label>
+                      <input class="form-control" type="file" id="formTxtFile" name="file" accept=".docx" required>
+                  </div>
+                  <button type="submit" class="btn btn-sm w-100 text-white" id="convertTxtBtn" style="background: #CF0107;">
+                      <i class="fas fa-sync-alt me-2"></i> Convert to TXT
+                  </button>
+              </form>
+
+              <!-- Upload Status -->
+              <div id="uploadTxtStatus" class="text-center mt-3"></div>
+
+              <!-- Download Link -->
+              <div id="downloadTxtLink" class="text-center mt-3"></div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Upload TXT Modal -->
+<div class="modal fade" id="uploadTxtToPdfModal" tabindex="-1" aria-labelledby="uploadTxtToPdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+          <div class="modal-header" style="background: #CF0107;">
+              <h5 class="modal-title" id="uploadTxtToPdfModalLabel">
+                  <i class="fas fa-cloud-upload-alt me-2"></i> Upload TXT and Convert to PDF
+              </h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form id="uploadTxtToPdfForm">
+                  <div class="mb-3">
+                      <label for="txtFile" class="form-label">Select a TXT file from your device:</label>
+                      <input class="form-control" type="file" id="txtFile" name="file" accept=".txt" required>
+                  </div>
+                  <button type="submit" class="btn btn-sm w-100 text-white" style="background: #CF0107;">
+                      <i class="fas fa-sync-alt me-2"></i> Convert to PDF
+                  </button>
+              </form>
+
+              <!-- Upload Status -->
+              <div id="uploadTxtToPdfStatus" class="text-center mt-3"></div>
+
+              <!-- Download Link -->
+              <div id="downloadTxtToPdfLink" class="text-center mt-3"></div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Upload TXT to DOCX Modal -->
+<div class="modal fade" id="uploadTxtToDocxModal" tabindex="-1" aria-labelledby="uploadTxtToDocxModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+          <div class="modal-header" style="background: #CF0107;">
+              <h5 class="modal-title" id="uploadTxtToDocxModalLabel">
+                  <i class="fas fa-file-upload me-2"></i> Upload and Convert TXT to DOCX
+              </h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form id="uploadTxtToDocxForm">
+                  <div class="mb-3">
+                      <label for="formTxtToDocxFile" class="form-label">Select a TXT file from your device:</label>
+                      <input class="form-control" type="file" id="formTxtToDocxFile" name="file" accept=".txt" required>
+                  </div>
+                  <button type="submit" class="btn btn-sm w-100 text-white" id="convertTxtToDocxBtn" style="background: #CF0107;">
+                      <i class="fas fa-file-word me-2"></i> Convert to DOCX
+                  </button>
+              </form>
+
+              <!-- Upload Status -->
+              <div id="uploadTxtToDocxStatus" class="text-center mt-3"></div>
+
+              <!-- Download Link -->
+              <div id="downloadTxtToDocxLink" class="text-center mt-3"></div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Upload PDF to TXT Modal -->
+<div class="modal fade" id="uploadPdfToTxtModal" tabindex="-1" aria-labelledby="uploadPdfToTxtModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+          <div class="modal-header" style="background: #CF0107;">
+              <h5 class="modal-title" id="uploadPdfToTxtModalLabel">
+                  <i class="fas fa-cloud-upload-alt me-2"></i> Upload and Convert File
+              </h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form id="uploadPdfToTxtForm">
+                  <div class="mb-3">
+                      <label for="pdfFileInput" class="form-label">Select a PDF file from your device:</label>
+                      <input class="form-control" type="file" id="pdfFileInput" name="file" accept=".pdf" required>
+                  </div>
+                  <button type="submit" class="btn btn-sm w-100 text-white" id="convertPdfToTxtBtn" style="background: #CF0107;">
+                      <i class="fas fa-sync-alt me-2"></i> Convert to TXT
+                  </button>
+              </form>
+
+              <!-- Upload Status -->
+              <div id="uploadPdfToTxtStatus" class="text-center mt-3"></div>
+
+              <!-- Download Link -->
+              <div id="downloadPdfToTxtLink" class="text-center mt-3"></div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Upload PDF to Images Modal -->
+<div class="modal fade" id="uploadPdfToImagesModal" tabindex="-1" aria-labelledby="uploadPdfToImagesModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+          <div class="modal-header" style="background: #CF0107;">
+              <h5 class="modal-title" id="uploadPdfToImagesModalLabel">
+                  <i class="fas fa-file-image me-2"></i> Upload PDF to Convert to Images
+              </h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form id="uploadPdfToImagesForm">
+                  <div class="mb-3">
+                      <label for="formPdfFile" class="form-label">Select a PDF file:</label>
+                      <input class="form-control" type="file" id="formPdfFile" name="file" accept=".pdf" required>
+                  </div>
+                  <button type="submit" class="btn btn-sm w-100 text-white" id="convertPdfToImagesBtn" style="background: #CF0107;">
+                      <i class="fas fa-sync-alt me-2"></i> Convert to Images
+                  </button>
+              </form>
+
+              <div id="uploadImagesStatus" class="text-center mt-3"></div>
+              <div id="downloadImagesLink" class="text-center mt-3"></div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Upload JPG/PNG to PDF Modal -->
+<div class="modal fade" id="uploadJpgToPdfModal" tabindex="-1" aria-labelledby="uploadJpgToPdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header" style="background: #CF0107;">
+        <h5 class="modal-title" id="uploadJpgToPdfModalLabel">
+          <i class="fas fa-file-pdf me-2"></i> Upload JPG to Convert to PDF
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="uploadJpgToPdfForm">
+          <div class="mb-3">
+            <label for="formJpgFile" class="form-label">Select JPG image(s):</label>
+            <input class="form-control" type="file" id="formJpgFile" name="files" accept=".jpg, .jpeg" multiple required>
+          </div>
+          <button type="submit" class="btn btn-sm w-100 text-white" id="uploadButton" style="background: #CF0107;">
+            <i class="fas fa-sync-alt me-2"></i> Convert to PDF
+          </button>
+        </form>
+
+        <div id="uploadPdfStatus" class="text-center mt-3"></div>
+        <div id="downloadPdfLink2" class="text-center mt-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal for PPTX to PDF-->
+<div class="modal fade" id="uploadPptxToPdfModal" tabindex="-1" aria-labelledby="uploadPptxToPdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header" style="background: #CF0107;">
+        <h5 class="modal-title" id="uploadPptxToPdfModalLabel">
+          <i class="fas fa-cloud-upload-alt me-2"></i> Upload and Convert File
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="uploadPptxForm">
+          <div class="mb-3">
+            <label for="pptxFile" class="form-label">Select a PPTX file from your device:</label>
+            <input class="form-control" type="file" id="pptxFile" name="file" accept=".pptx" required>
+          </div>
+          <button type="submit" class="btn btn-sm w-100 text-white" id="convertPptxBtn" style="background: #CF0107;">
+            <i class="fas fa-sync-alt me-2"></i> Convert to PDF
+          </button>
+        </form>
+
+        <!-- Upload Status -->
+        <div id="pptxUploadStatus" class="text-center mt-3"></div>
+
+        <!-- Download Link -->
+        <div id="pptxDownloadLink" class="text-center mt-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for XLSX to PDF -->
+<div class="modal fade" id="uploadXlsxToPdfModal" tabindex="-1" aria-labelledby="uploadXlsxToPdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header" style="background: #CF0107;">
+        <h5 class="modal-title" id="uploadXlsxToPdfModalLabel">
+          <i class="fas fa-cloud-upload-alt me-2"></i> Upload and Convert File
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="uploadXlsxForm">
+          <div class="mb-3">
+            <label for="xlsxFile" class="form-label">Select an XLSX file from your device:</label>
+            <input class="form-control" type="file" id="xlsxFile" name="file" accept=".xlsx" required>
+          </div>
+          <button type="submit" class="btn btn-sm w-100 text-white" id="convertXlsxBtn" style="background: #CF0107;">
+            <i class="fas fa-sync-alt me-2"></i> Convert to PDF
+          </button>
+        </form>
+
+        <!-- Upload Status -->
+        <div id="xlsxUploadStatus" class="text-center mt-3"></div>
+
+        <!-- Download Link -->
+        <div id="xlsxDownloadLink" class="text-center mt-3"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <script src="{% static 'js/docxtopdf.js' %}"></script>
+  <script src="{% static 'js/pdftodocx.js' %}"></script>
+  <script src="{% static 'js/docxtotxt.js' %}"></script>
+  <script src="{% static 'js/txttopdf.js' %}"></script>
+  <script src="{% static 'js/txttodocx.js' %}"></script>
+  <script src="{% static 'js/pdftotxt.js' %}"></script>
+  <script src="{% static 'js/pdftoimg.js' %}"></script>
+  <script src="{% static 'js/imgtopdf.js' %}"></script>
+  <script src="{% static 'js/pptxtopdf.js' %}"></script>
+  <script src="{% static 'js/xlsxtopdf.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
